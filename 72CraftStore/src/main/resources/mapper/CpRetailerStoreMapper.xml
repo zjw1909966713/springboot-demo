@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.highrock.mapper.CpRetailerStoreMapper">
+
+<update id="updateCpRetailerStoreById" parameterType="com.highrock.model.CpRetailerStore">
+    UPDATE  cp_retailer_store
+    <set>
+        <if test="retailer_no!=null">retailer_no=#{retailer_no},</if>
+        <if test="store_no!=null">store_no=#{store_no},</if>
+        <if test="name!=null">name=#{name},</if>
+        <if test="authorization!=null">authorization=#{authorization},</if>
+        <if test="token!=null">token=#{token},</if>
+        <if test="state_code!=null">state_code=#{state_code},</if>
+        <if test="address!=null">address=#{address},</if>
+        <if test="city!=null">city=#{city},</if>
+        <if test="zip!=null">zip=#{zip},</if>
+        <if test="paywork_id!=null">paywork_id=#{paywork_id},</if>
+        <if test="paywork_key!=null">paywork_key=#{paywork_key},</if>
+    </set>
+    WHERE id=#{id}
+
+</update>
+
+
+
+
+
+    <update id="updateCpRetailerStoreByRetailerNoAndStoreNo" parameterType="com.highrock.model.CpRetailerStore">
+        UPDATE  cp_retailer_store
+        <set>
+            <if test="name!=null">name=#{name},</if>
+            <if test="authorization!=null">authorization=#{authorization},</if>
+            <if test="token!=null">token=#{token},</if>
+            <if test="state_code!=null">state_code=#{state_code},</if>
+            <if test="address!=null">address=#{address},</if>
+            <if test="city!=null">city=#{city},</if>
+            <if test="zip!=null">zip=#{zip},</if>
+            <if test="paywork_id!=null">paywork_id=#{paywork_id},</if>
+            <if test="paywork_key!=null">paywork_key=#{paywork_key},</if>
+        </set>
+
+        WHERE retailer_no=#{retailer_no} AND store_no=#{store_no}
+
+    </update>
+
+
+
+
+</mapper>

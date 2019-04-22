@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.highrock.mapper.CpRetailerMapper">
+
+<update id="updateCpRetailerById" parameterType="com.highrock.model.CpRetailer">
+    UPDATE  cp_retailer
+    <set>
+        <if test="id!=null">id=#{id},</if>
+        <if test="retailer_no!=null">retailer_no=#{retailer_no},</if>
+        <if test="name!=null">name=#{name},</if>
+    </set>
+    WHERE id=#{id}
+
+</update>
+
+
+    <update id="updateCpRetailerByRetailerNo" parameterType="com.highrock.model.CpRetailer">
+        UPDATE  cp_retailer
+        <set>
+            <if test="name!=null">name=#{name},</if>
+        </set>
+        WHERE retailer_no=#{retailer_no}
+
+    </update>
+
+
+
+</mapper>

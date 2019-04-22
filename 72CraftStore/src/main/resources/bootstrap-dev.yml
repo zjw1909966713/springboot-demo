@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    inetutils:
+      timeout-seconds: 10
+    zookeeper: #指定zookeeper的地址,多个用逗号拼接
+      connect-string: 172.16.1.46:2181,172.16.1.47:2181,172.16.1.48:2181
+  application:
+    name: 72craftStoreService-dev
+
+
+#配置日志
+logging:
+  level:
+    com.highrock.mapper:  debug
+  path: /home/log/72craftstore
+  config: classpath:logback-spring.xml

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.highrock.mapper.CpStyleStoreAuthorizationMapper">
+    <update id="updateCpStyleStoreAuthorizationByStoreNoAndStyleNo" parameterType="com.highrock.model.CpStyleStoreAuthorization">
+        UPDATE  cp_style_store_authorization
+        <set>
+            <if test="id!=null">id=#{id},</if>
+            <if test="store_no!=null">store_no=#{store_no},</if>
+            <if test="style_no!=null">style_no=#{style_no},</if>
+            <if test="commission!=null">commission=#{commission},</if>
+            <if test="price_policy!=null">price_policy=#{price_policy},</if>
+
+
+        </set>
+
+        WHERE  store_no=#{store_no} and style_no=#{style_no}
+
+
+    </update>
+
+
+
+
+</mapper>
